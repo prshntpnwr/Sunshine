@@ -57,7 +57,7 @@ public class DetailActivity extends ActionBarActivity {
     /**
      * A placeholder fragment containing a simple view.
      */
-    public static class DetailFragment extends Fragment implements com.example.android.sunshine.app.DetailFragment {
+    public static class DetailFragment extends Fragment {
 
         private static final String LOG_TAG = DetailFragment.class.getSimpleName();
 
@@ -74,7 +74,7 @@ public class DetailActivity extends ActionBarActivity {
                                  Bundle savedInstanceState) {
 
             Intent intent = getActivity().getIntent();
-           // View rootView = inflater.inflate(R.layout.fragment_detail, container, false);
+            View rootView = inflater.inflate(R.layout.fragment_detail, container, false);
             if (intent != null && intent.hasExtra(Intent.EXTRA_TEXT)) {
                 mForecastStr = intent.getStringExtra(Intent.EXTRA_TEXT);
                 ((TextView) rootView.findViewById(R.id.detail_text))
@@ -85,7 +85,7 @@ public class DetailActivity extends ActionBarActivity {
         }
 
         @Override
-        public void onCreateOptionMenu(Menu menu, MenuInflater inflater) {
+        public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
             inflater.inflate(R.menu.detailfragment, menu);
 
             MenuItem menuItem = menu.findItem(R.id.action_share);
@@ -96,7 +96,7 @@ public class DetailActivity extends ActionBarActivity {
             if(mShareActionProvider != null){
                 mShareActionProvider.setShareIntent(createShareForecastIntent());
             } else {
-                Log.d(LOG_TAG, "Sahre Action Provider is null?");
+                Log.d(LOG_TAG, "Share Action Provider is null?");
             }
         }
 
@@ -107,5 +107,6 @@ public class DetailActivity extends ActionBarActivity {
             shareIntent.putExtra(Intent.EXTRA_TEXT, mForecastStr + FORECAST_SHARE_HASHTAG);
             return shareIntent;
         }
+
     }
 }

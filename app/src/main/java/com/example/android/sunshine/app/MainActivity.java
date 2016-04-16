@@ -66,8 +66,14 @@ public class MainActivity extends ActionBarActivity {
             return true;
         }
 
+        if(id == R.id.action_map){
+            openPreferredLocationINMap();
+            return true;
+        }
+
         return super.onOptionsItemSelected(item);
     }
+
     private void openPreferredLocationINMap(){
         SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(this);
         String location = sharedPrefs.getString(getString(R.string.pref_location_key), getString(R.string.pref_location_default));
