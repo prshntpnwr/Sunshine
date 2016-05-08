@@ -135,6 +135,7 @@ public class WeatherContract {
 
 
         public static Uri buildWeatherUri(long id) {
+            //ContentUris.withAppendedId() is a helper method to create an id-based URI
             return ContentUris.withAppendedId(CONTENT_URI, id);
         }
 

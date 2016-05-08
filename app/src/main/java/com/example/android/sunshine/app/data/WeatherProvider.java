@@ -170,11 +170,15 @@ public class WeatherProvider extends ContentProvider {
             case  WEATHER_WITH_LOCATION:
                 return WeatherContract.WeatherEntry.CONTENT_TYPE;
             case WEATHER_WITH_LOCATION_AND_DATE:
+                //return a specific value of type item
                 return WeatherContract.WeatherEntry.CONTENT_ITEM_TYPE;
             default:
                 throw new UnsupportedOperationException("Unknown uri: " + uri);
         }
     }
+
+    //Selection, this argument you can determine which records to update, deleted, insert
+    //SelectionArgs, The binding parameters to the previous selection argument
 
     @Override
     public Cursor query(Uri uri, String[] projection, String selection, String[] selectionArgs,
