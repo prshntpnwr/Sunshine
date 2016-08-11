@@ -1,4 +1,3 @@
-
 package com.example.android.sunshine.app;
 
 import android.content.Context;
@@ -16,7 +15,7 @@ import java.util.Date;
 import java.util.Locale;
 
 public class Utility {
-    // We'll default our latlong to 0. Yay, "Earth!"
+
     public static float DEFAULT_LATLONG = 0F;
 
     public static boolean isLocationLatLonAvailable(Context context) {

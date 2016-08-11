@@ -1,3 +1,4 @@
+
 package com.example.android.sunshine.app.sync;
 
 import android.accounts.Account;
@@ -248,6 +249,7 @@ public class SunshineSyncAdapter extends AbstractThreadedSyncAdapter {
 
         try {
             JSONObject forecastJson = new JSONObject(forecastJsonStr);
+            Context context = getContext();
 
             // do we have an error?
             if ( forecastJson.has(OWM_MESSAGE_CODE) ) {

@@ -12,10 +12,6 @@ import android.util.SparseBooleanArray;
 import android.widget.AbsListView;
 import android.widget.Checkable;
 
-/**
- * The ItemChoiceManager class keeps track of which positions have been selected.  Note that it
- * doesn't take advantage of new adapter features to track changes in the underlying data.
- */
 public class ItemChoiceManager {
     private final String LOG_TAG = MainActivity.class.getSimpleName();
     private final String SELECTED_ITEMS_KEY = "SIK";
@@ -33,8 +29,6 @@ public class ItemChoiceManager {
 
     private ItemChoiceManager() {
     }
-
-    ;
 
     public ItemChoiceManager(RecyclerView.Adapter adapter) {
         mAdapter = adapter;
